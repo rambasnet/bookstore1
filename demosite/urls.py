@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+import bookstore.views as bv
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', bv.index, name='index'),
+    url(r'^index/', bv.index, name='index'),
 ]
