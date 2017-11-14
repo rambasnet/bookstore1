@@ -4,6 +4,7 @@ import datetime
 from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -103,7 +104,9 @@ def loginProcess(request):
             if user is not None:
                 if user.is_active:
                     login(request, user) #adds session info for user
-                    return profile(request)
+                    #return profile(request)
+                    return HttpResponseRedirect(
+                            reverse('profile'))
                 else:
                     errors.append('This account has been disabled.')
             else:
