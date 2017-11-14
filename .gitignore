@@ -105,3 +105,6 @@ db.sqlite3
 
 #.vscode
 .vscode/
+
+# compiled python files
+*.pyc
