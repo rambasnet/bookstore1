@@ -72,10 +72,11 @@ def hours_delta(request, offset=1):
 def profile(request):
     context = {
         'title': 'Profile Page',
-        'heading': 'This is your awesome profile...'
+        'heading': 'Profile'
     }
 
     if not request.user.is_authenticated():
+        context['heading'] = 'Must authenticate...'
         context['content'] = 'Must <a href="/login/">login</a> to view your profile.'
     
     return render(request, 'bookstore/profile.html', context)
