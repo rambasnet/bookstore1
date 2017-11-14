@@ -103,3 +103,5 @@ ENV/
 #sqlitedb
 db.sqlite3
 
+#.vscode
+.vscode/
