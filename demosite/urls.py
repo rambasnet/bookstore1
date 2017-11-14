@@ -22,4 +22,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', bv.index, name='index'),
     url(r'^index/', bv.index, name='index'),
+    url(r'^time/$', bv.current_datetime),
+    url(r'^time/(-+\d{1,2})/$', bv.hours_delta, name='time_delta'),
+    url(r'^profile/$', bv.profile, name='profile'),
+    url(r'^login/$', bv.login_view, name='login'),
+    url(r'^logout/$', bv.logout_view, name='logout'),
+    url(r'^loginProcess/$', bv.loginProcess, name='loginProcess'),
 ]
